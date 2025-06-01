@@ -1,15 +1,34 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import bg from '../assets/bg2.png'
 import seperator_img from '../assets/seperator.png'
+import { getContent } from '../pages/endpoint'
+import { formatTextWithSpans } from '../pages/helperFunctions'
 
 export default function Story () {
+
+  const [webData, setWebData] = useState()
+  useEffect(() => {
+    getContent('theStory', setWebData)
+  }, [])
+
+  
   return (
     <>
     <div className="section_wrapper" id='the-story'>
       <div className="story_wrapper">
-        <h1>THE STORY</h1>
+        <h1>{webData && webData.heading}</h1>
         <img src={seperator_img} alt="" />
         <p>
+
+          {
+            webData && 
+            webData.description.split('<br>').map((line, index) => (
+              <span key={index}>{line.trim()}</span>
+            ))
+          }
+
+          
+{/* 
           <span>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
           </span>
@@ -21,7 +40,7 @@ export default function Story () {
           </span>
           <span>
             It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-          </span>
+          </span> */}
         </p>
       </div>
     </div>

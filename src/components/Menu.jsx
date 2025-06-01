@@ -22,13 +22,17 @@ export default function Menu () {
         }}
       >
         <menu>
-          <a href="#home">HOME</a>
-          <div className="sep"></div>
+          {/* <a href="#home">HOME</a> */}
           <a href="#the-story">STORY</a>
           <div className="sep"></div>
           <a href="#trailer">TRAILER</a>
           <div className="sep"></div>
           <a href="#about-us">ABOUT US</a>
+          <div className="sep"></div>
+          <a href="#about-us">SUPPORT</a>
+          <div className="sep"></div>
+          <a href="#about-us">MINIGAME</a>
+
         </menu>
       </header>
     </>

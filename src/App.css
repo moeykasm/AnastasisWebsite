@@ -17,18 +17,6 @@ html {
   scroll-behavior: smooth;
 }
 
-menu {
-  height: 100%;
-
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-
-
-}
-
 @font-face {
   font-family: 'cinzel';
   src: url(../src/assets/fonts/Cinzel/Cinzel-VariableFont_wght.ttf);
@@ -37,6 +25,11 @@ menu {
 @font-face {
   font-family: 'coro';
   src: url(../src/assets/fonts/Cormorant_Garamond/CormorantGaramond-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: 'coro bold';
+  src: url(../src/assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Bold.ttf);
 }
 
 @font-face {
@@ -54,15 +47,30 @@ menu {
   src: url(../src/assets/fonts/EB_Garamond/static/EBGaramond-Medium.ttf);
 }
 
+
+menu {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+
+
+}
+
 menu p {
   color: #CBAE67;
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-family: 'cinzel';
 }
 menu a {
   color: #CBAE67;
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-family: 'cinzel';
+
 }
 
 menu p:hover,
@@ -91,6 +99,22 @@ div.sep {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0.75;
+}
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0 0rem 0;
+
+}
+.socials img {
+  width: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero_content {
@@ -102,6 +126,7 @@ div.sep {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 50px 0 0 0;
 }
 
 
@@ -189,6 +214,11 @@ div.sep {
   flex-direction: column;
 }
 
+.section_wrapper .story_wrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+
 .story_wrapper img {
   width: 600px;
   height: 100px;
@@ -224,13 +254,18 @@ div.sep {
   height: 750px;
   background-color: rgb(255, 255, 255, .2);
 }
+.about_us .about_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 
 
 footer {
   width: 100%;
   padding: 2rem 0;
-  background-color: #CBAE67;
+  background-color: rgb(255, 255, 255, .1);
 
   display: flex;
   align-items: center;
@@ -242,11 +277,20 @@ footer p {
   font-family: 'eb med';
 
   font-size: 1.5rem;
-  color: black;
+  color: #E7D7A1;
 }
 
 
 
+
+@keyframes popup {
+  0% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
 
 .new_update_wrapper {
   display: flex;
@@ -260,23 +304,27 @@ footer p {
   top: 0;
   left: 0;
 
-  background-color: rgb(0, 0, 0, 0.5);
-
+  background-color: rgb(0, 0, 0, 0.25);
   z-index: 20;
+
 }
 
 .new_update_wrapper .new_update {
   width: 500px;
-  background-color: black;
+  background-color: rgb(0, 0, 0, .75);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  padding: 5rem 3.5rem 4rem 3.5rem;
+  padding: 6rem 3.5rem 5rem 3.5rem;
   gap: 1rem;
 
   position: relative;
+
+  backdrop-filter: blur(10px);
+  animation: popup 0.2s ease-in-out;
+
 }
 
 .new_update .border {
@@ -285,7 +333,7 @@ footer p {
   left: 1.5rem;
   right: 1.5rem;
   bottom: 1.5rem;
-  border: 1px solid rgb(255, 255, 255, .1);
+  border: 1px solid rgb(255, 215, 0, .2);
 }
 
 .new_update h1 {
@@ -298,8 +346,8 @@ footer p {
 
 .new_update .image {
   width: 100%;
-  height: 80px;
-  background-color: rgb(255, 255, 255, .05);
+  height: 120px;
+  background-color: rgb(0, 0, 0, 0.5);
 
   display: flex;
   align-items: center;
@@ -311,6 +359,12 @@ footer p {
   font-size: 1.1rem;
   font-family: 'eb';
   color: #fff;
+}
+
+.new_update .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .new_update .image p {
@@ -340,4 +394,431 @@ footer p {
 
 .new_update .x:hover {
   opacity: 0.5;
+}
+
+
+
+
+
+
+
+
+
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #282828;
+  gap: 10px;
+
+}
+.login .login_widget {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+  max-width: 375px;
+
+}
+
+.login .login_widget input{
+  height: 45px;
+  width: 100%;
+  padding: 0 0.5rem;
+  border: 0;
+  border: 2px solid rgb(255, 255, 255, .2);
+  background-color: rgb(51, 51, 51);
+
+  font-size: 1.1rem;
+}
+.inp {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.inp label {
+  width: 100%;
+  text-align: left;
+}
+
+.inp textarea {
+  height: 100px;
+  width: 100%;
+  padding: 0.5rem;
+  border: 0;
+  border: 2px solid rgb(255, 255, 255, .2);
+  background-color: rgb(51, 51, 51);
+
+  font-size: 1.1rem;
+}
+
+.login button {
+  height: 45px;
+  width: 100%;
+  padding: 0 0.5rem;
+  border: 0;
+  background-color: goldenrod;
+  color: black;
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  margin-top: 10px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login button .load {
+  width: 20px;
+  height: 20px;
+  border: 4px solid white;
+  border-left: 4px solid transparent;
+  position: absolute;
+  right: 1rem;
+  border-radius: 100px;
+
+  animation: load 0.5s infinite linear;
+
+}
+
+@keyframes load {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.login button:hover {opacity: 0.75;}
+
+input:focus {
+  outline: none ;
+}
+
+textarea:focus {
+  outline: none !important;
+}
+
+.login h1 {
+  margin-top: -25px;
+  font-weight: normal;
+}
+
+.submission {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 70px;
+}
+.submit {
+  aspect-ratio: 1/1;
+  background-color: #CBAE67;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'coro bold';
+  font-family: 'semi coro';
+  font-family: 'eb';
+}
+.submit p {
+  rotate: 90deg;
+  font-size: 4rem;
+  color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(0px, 5px);
+  line-height: 100%;
+}
+
+input.newsletter {
+
+  padding: 0rem 1.5rem;
+  width: 90%;
+  height: 100%;
+  max-width: 500px;
+  font-size: 2rem;
+
+  border: 2px solid #CBAE67;
+  background-color: rgb(203, 174, 103, 0.1);
+
+  position: relative;
+
+  z-index: 1;
+  font-family: 'semi coro';
+
+  color: #E7D7A1;
+}
+
+input.newsletter:focus {
+  border: 2px solid white;
+  outline: none !important;
+}
+
+input.newsletter::placeholder {
+  color: rgb(231, 215, 161,);
+}
+
+/* admin_panel */
+.admin_panel {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: start;
+  justify-content: start;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: #333333;
+}
+
+.admin_panel .side_bar {
+  width: 325px;
+  height: 100%;
+  background-color: rgb(255, 255, 255, .15);
+  background-color: #282828;
+  background-color: #202020;
+  padding: 2rem 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 1.5rem;
+
+}
+
+.admin_panel .side_bar h1 {
+  font-family: 'coro bold';
+  font-size: 2rem;
+  color: #fff;
+  line-height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.admin_panel .side_bar ul {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin_panel .side_bar ul li {
+  width: 100%;
+  height: 40px;
+  background-color: rgb(255, 255, 255, .1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+.admin_panel .side_bar ul li p {
+  width: 100%;
+}
+.admin_panel .side_bar ul li.active {
+  border-left: 3px solid gold;
+}
+
+.admin_panel .side_bar ul li:hover {
+  opacity: 0.75;
+}
+
+.logged_in_as {
+  margin-top: auto;
+}
+.logged_in_as button {
+  width: 100%;
+  height: 40px;
+  background-color: rgb(168, 34, 34);
+  border: 0;
+  margin: 10px 0 0 0;
+  font-weight: bold;
+}
+.logged_in_as button:hover {
+  opacity: 0.75;
+}
+
+
+/* panel_content */
+.panel_content {
+  flex-grow: 1;
+  height: 100%;
+  padding: 3rem 2rem;
+
+  overflow-y: scroll;
+}
+
+.panel_content h1 {
+  font-weight: normal;
+  font-size: 1.75rem;
+}
+
+
+.panel_content .panel {
+  padding: 1rem 0 0 0;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  width: 100%;
+
+}
+
+.filter button {
+  padding: 8px 16px; 
+  font-size: .9rem;
+  font-weight: bold;
+  border: 0;
+  background-color: goldenrod;
+  color: #000;
+}
+.filter button:hover {
+  opacity: 0.75;
+}
+
+.panel_content .panel.mailing_list .emails_wrapper {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 5px;
+}
+  .panel_content .panel.mailing_list .email {
+  /* background-color: rgb(40, 40, 40, .5); */
+  /* padding: 8px 16px; */
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #282828;
+  border-radius: 100px;
+}
+
+
+.site_content .site_inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 1rem;
+  width: 600px;
+}
+.site_content .site_inputs label {
+  width: 100%;
+  text-align: left;
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+}
+.site_content .site_inputs label button {
+  background-color: goldenrod;
+  padding: 2.5px 5px;
+  border: 0;
+  color: black;
+  font-weight: 600;
+}
+
+.site_content .site_inputs label button:hover {
+  opacity: 0.75;
+}
+
+
+.inp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.site_content .site_inputs input[type="text"] {
+  height: 45px;
+  width: 100%;
+  padding: 0 0.5rem;
+  border: 0;
+  border: 2px solid rgb(255, 255, 255, .2);
+  background-color: rgb(51, 51, 51);
+
+  font-size: 1.1rem;
+}
+
+.site_content .site_inputs input:focus {
+  outline: none !important;
+}
+
+
+
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+.radio-option input[type="radio"] {
+  appearance: none;
+  min-width: 24px;
+  min-height: 24px;
+  border: 2px solid #555;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radio-option input[type="radio"]:checked {
+  border-color: goldenrod;
+  background-color: transparent;
+}
+
+.radio-option input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  background-color: goldenrod;
+}
+
+.radio-label {
+  font-size: 1rem;
+  color: #fff;
 }

@@ -1,14 +1,32 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import bg from '../../assets/bg2.png'
 import seperator_img from '../../assets/seperator2.png'
+import { getContent } from '../../pages/endpoint'
 
 export default function NewUpdate() {
 
-  const [on,setOn] = useState(true)
+  const [on,setOn] = useState(false)
+  const [switchedOff, setSwitchedOff] = useState(false)
+  const [webData, setWebData] = useState()
+
+
+  useEffect(() => {
+    getContent('popup', setWebData)
+  }, [] )
+  useEffect( () => {
+
+    if (webData?.delay) {
+      setTimeout(() => {
+        setOn(true)
+      }, webData?.delay * 1000);
+    }
+
+  }, [webData])
+
   return (
     <>
     {
-      on &&
+       on && webData?.show &&
   
       <div className="new_update_wrapper">
 
@@ -18,15 +36,26 @@ export default function NewUpdate() {
           <div className="border">
             <div className="x" onClick={() => setOn(false)}>+</div>
           </div>
-          <h1>NEW RELEASE</h1>
+          <h1>{webData?.heading}</h1>
           <img src={seperator_img} className='seperator' alt="" />
-          <div className="image"><p>IMAGE</p></div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius beatae impedit consequatur obcaecati voluptatum, quos adipisci sint dolorum. Dignissimos, natus illo possimus sunt tempore sapiente qui exercitationem aut delectus earum!</p>
+          {
+            webData?.show_img &&
+            <div className="image">
+              {
+                webData?.img ?
+                <img src={webData.img} alt="" />
+                :
+                <p>IMAGE</p>
+              }
+            </div>
+          }
+        
+          <p>{webData?.description}</p>
         </div>
 
       </div>
-      
     }
+
    </>
   )
 }

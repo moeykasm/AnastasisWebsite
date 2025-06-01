@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
+
 import Menu from './components/Menu'
 import Hero from './components/Hero'
 import Story from './components/Story'
@@ -9,27 +9,46 @@ import Trailer from './components/Trailer'
 import AboutUs from './components/AboutUs'
 import Footer from './components/Footer'
 import NewUpdate from './components/popups/NewUpdate'
+import AdminPanel from './pages/AdminPanel'
+import Newsletter from './components/Newsletter'
+
+import Support from './pages/Support'
+import Minigame from './pages/Minigame'
 
 function App() {
   const [update, setUpdate] = useState(true)
 
+  const host = window.location.hostname;
+  const subdomain = host.split('.')[0];
+
   return (
-    <>
-
-      <Menu />
-      <Hero />
-      <Story />
-      <Trailer />
-      <AboutUs />
-      <Footer />
-
-      {/* if we have a new update */}
-      {
-        update &&
-        <NewUpdate />
-      }
-
-    </>
+    <Router>
+      <Routes>
+        {subdomain === 'adminpanel' ? (
+          <Route path="*" element={<AdminPanel />} />
+        ) : (
+          <>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Menu />
+                  <Hero />
+                  <Story />
+                  <Trailer />
+                  <AboutUs />
+                  <Newsletter />
+                  <Footer />
+                  {update && <NewUpdate />}
+                </>
+              }
+            />
+            <Route path="/report" element={<Support />} />
+            <Route path="/minigame" element={<Minigame />} />
+          </>
+        )}
+      </Routes>
+    </Router>
   )
 }
 
