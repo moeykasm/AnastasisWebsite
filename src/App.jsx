@@ -14,6 +14,7 @@ import Newsletter from './components/Newsletter'
 
 import Support from './pages/Support'
 import Minigame from './pages/Minigame'
+import ReportABug from './pages/ReportABug'
 
 function App() {
   const [update, setUpdate] = useState(true)
@@ -45,6 +46,7 @@ function App() {
             />
             <Route path="/report" element={<Support />} />
             <Route path="/minigame" element={<Minigame />} />
+            <Route path="/report-a-bug" element={<ReportABug />} />
           </>
         )}
       </Routes>

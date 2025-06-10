@@ -1,0 +1,88 @@
+
+
+
+.report_a_bug_wrapper {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 200px 0 0 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+.report_a_bug_wrapper h1 {
+    text-align: center;
+    font-size: 5rem;
+    font-family: 'coro';
+    color: #E7D7A1;
+    line-height: 100%;
+}
+
+.report_a_bug_wrapper p {
+    text-align: center;
+    font-family: 'eb';
+    font-size: 1.5rem;
+    color: #E7D7A1;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 600px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.report_a_bug_wrapper input {
+    height: 50px;
+    width: 100%;
+    padding: 0 0.75rem;
+    border: 0;
+    border: 2px solid rgb(255, 255, 255, .2);
+    background-color: rgb(51, 51, 51);
+
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.report_a_bug_wrapper textarea {
+    width: 100%;
+    height: 150px;
+
+    padding: 0.75rem;
+    border: 0;
+    border: 2px solid rgb(255, 255, 255, .2);
+    background-color: rgb(51, 51, 51);
+  
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.report_a_bug_wrapper button {
+    height: 45px;
+    width: 100%;
+    padding: 0 0.5rem;
+    border: 0;
+    background-color: goldenrod;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: bold;
+  
+  
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

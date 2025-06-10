@@ -29,9 +29,9 @@ export default function Menu () {
           <div className="sep"></div>
           <a href="#about-us">ABOUT US</a>
           <div className="sep"></div>
-          <a href="#about-us">SUPPORT</a>
+          <a href="/report-a-bug">SUPPORT</a>
           <div className="sep"></div>
-          <a href="#about-us">MINIGAME</a>
+          <a href="/minigame">MINIGAME</a>
 
         </menu>
       </header>
