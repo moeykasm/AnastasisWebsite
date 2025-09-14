@@ -23,15 +23,15 @@ export default function Menu () {
       >
         <menu>
           {/* <a href="#home">HOME</a> */}
-          <a href="#the-story">STORY</a>
+          <a href="/#the-story">STORY</a>
           <div className="sep"></div>
-          <a href="#trailer">TRAILER</a>
+          <a href="/#trailer">TRAILER</a>
           <div className="sep"></div>
-          <a href="#about-us">ABOUT US</a>
+          <a href="/#about-us">ABOUT US</a>
           <div className="sep"></div>
           <a href="/report-a-bug">SUPPORT</a>
           <div className="sep"></div>
-          <a href="/minigame">MINIGAME</a>
+          <a href="/element-lab">ELEMENT LAB</a>
 
         </menu>
       </header>

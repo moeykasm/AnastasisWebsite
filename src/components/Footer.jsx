@@ -7,12 +7,15 @@ export default function Footer () {
   return (
     <>
      <footer>
-      <p>playanastasis.com</p>
+      <p>www.playanastasis.com</p>
       {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo veniam enim similique sed.</p> */}
       <div className="socials">
-          <img src={tiktok} alt="" />
+          {/* <img src={tiktok} alt="" />
           <img src={instagram} alt="" />
-          <img src={youtube} alt="" />
+          <img src={youtube} alt="" /> */}
+          <a href="https://flurbonstein.itch.io/anastasis" target='_blank'>
+            <img src="/available-on-itch.svg" alt="" />
+          </a>
         </div>
      </footer>
     </>
