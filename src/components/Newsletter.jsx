@@ -39,7 +39,8 @@ export default function Newsletter() {
     <div className="section_wrapper" id='trailer'>
       <div className="story_wrapper">
         <h1>{webData && webData.heading}</h1>
-        <img src={seperator_img} alt="" />
+        <img className='sep' src={seperator_img} alt="" />
+
         <div className="submission">
           <input value={storedEmail} onChange={emailInputChanged} className="newsletter" type="text" placeholder='youremail@email.com' />
           <div className="submit" onClick={addEmailToMailingList}>

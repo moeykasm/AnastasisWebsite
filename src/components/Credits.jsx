@@ -9,10 +9,11 @@ export default function Credits() {
 
   return (
     <>
-    <div className="section_wrapper" id='credits'>
+    <div className="section_wrapper credits">
       <div className="credits_wrapper">
         <h1>CREDITS</h1>
-        <img src={seperator_img} alt="" />
+        <img className='sep' src={seperator_img} alt="" />
+
         <br />
         <table>
           <thead>

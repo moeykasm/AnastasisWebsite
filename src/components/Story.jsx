@@ -17,7 +17,7 @@ export default function Story () {
     <div className="section_wrapper" id='the-story'>
       <div className="story_wrapper">
         <h1>{webData && webData.heading}</h1>
-        <img src={seperator_img} alt="" />
+        <img className='sep' src={seperator_img} alt="" />
         <p>
 
           {

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 export default function Menu () {
 
   const [scroll, setScroll] = useState()
+  const [mobMenu, setMobMenu] = useState(false)
 
   useEffect( () => {  
 
@@ -18,7 +19,8 @@ export default function Menu () {
       <header
         style={{
           top: scroll ? '0' : '2rem',
-          background: scroll ? 'black' : 'transparent'
+          background: scroll ? 'black' : 'transparent',
+          padding: scroll ? '1.5rem 0' : '0'
         }}
       >
         <menu>
@@ -33,7 +35,37 @@ export default function Menu () {
           <div className="sep"></div>
           <a href="/element-lab">ELEMENT LAB</a>
 
+
+
         </menu>
+
+
+        <div className="mobile_menu">
+          <p>ANASTASIS</p>
+          <div onClick={() => setMobMenu(true)} className="burger">
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+          </div>
+        </div>
+
+        {
+          mobMenu &&
+        <div className="mob_popup">
+          <a onClick={() => setMobMenu(false)} href="/#the-story">STORY</a>
+          <div className="sep"></div>
+          <a onClick={() => setMobMenu(false)} href="/#trailer">TRAILER</a>
+          <div className="sep"></div>
+          <a onClick={() => setMobMenu(false)} href="/#about-us">ABOUT US</a>
+          <div className="sep"></div>
+          <a onClick={() => setMobMenu(false)} href="/report-a-bug">SUPPORT</a>
+          <div className="sep"></div>
+          <a onClick={() => setMobMenu(false)} href="/element-lab">ELEMENT LAB</a>
+          <span className="x" onClick={() => setMobMenu(false)}>+</span>
+        </div>
+        }
+
+
       </header>
     </>
   )

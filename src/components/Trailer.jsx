@@ -19,9 +19,11 @@ export default function Trailer() {
   return (
     <>
     <div className="section_wrapper" id='trailer'>
+
       <div className="story_wrapper">
         <h1>{webData && webData.heading}</h1>
-        <img src={seperator_img} alt="" />
+        <img className='sep' src={seperator_img} alt="" />
+
         <div className="video">
           {
             webData?.link &&

@@ -16,7 +16,7 @@ export default function AboutUs() {
     <div className="section_wrapper" id='about-us'>
       <div className="story_wrapper">
         <h1>{webData?.heading && webData.heading}</h1>
-        <img src={seperator_img} alt="" />
+        <img className='sep' src={seperator_img} alt="" />
         <div className="about_us">
           <div className="about_text">
             <p>

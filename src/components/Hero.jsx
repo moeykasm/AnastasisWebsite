@@ -24,7 +24,9 @@ export default function Hero () {
       <div className="hero_content">
         <h1>{webData && webData.heading}</h1>
         <p>{webData && webData.description}</p>
-        <button>EXPLORE</button>
+        <a href="#the-story">
+          <button>EXPLORE</button>
+        </a>
 
         <div className="socials">
           {/* <img src={tiktok} alt="" />

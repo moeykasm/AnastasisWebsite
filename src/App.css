@@ -3,7 +3,6 @@ header {
   top: 2rem;
   left: 0;
   width: 100%;
-  height: 80px;
 
   display: flex;
   align-items: center;
@@ -57,20 +56,16 @@ menu {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-
-
 }
 
 menu p {
   color: #CBAE67;
-  font-size: 1.75rem;
   font-family: 'cinzel';
 }
 menu a {
   color: #CBAE67;
   font-size: 1.75rem;
   font-family: 'cinzel';
-
 }
 
 menu p:hover,
@@ -185,8 +180,6 @@ div.sep {
 
 }
 
-
-
 .section_wrapper {
   width: 100%;
   display: flex;
@@ -220,6 +213,7 @@ div.sep {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .section_wrapper .story_wrapper iframe {
@@ -227,7 +221,7 @@ div.sep {
   height: 100%;
 }
 
-.story_wrapper img {
+.story_wrapper img.sep {
   width: 600px;
   height: 100px;
   object-fit: cover;
@@ -236,19 +230,22 @@ div.sep {
 
 
 .video {
-  width: 1050px;
-  height: 550px;
+  width: 100%;
+  height: unset;
+  aspect-ratio: 3/2;
   background-color: rgb(255, 255, 255, .2);
 }
 
 
+
 .about_us {
-  width: 1050px;
+  width: 100%;
   display: flex;
   align-items: start;
   justify-content: center;
   gap: 2rem;
 }
+
 
 .about_us .about_text {
   width: 50%;
@@ -268,6 +265,7 @@ div.sep {
   object-fit: cover;
 
 }
+
 
 
 
@@ -834,6 +832,13 @@ input.newsletter::placeholder {
 
 
 
+.section_wrapper.credits {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 15%;
+}
 
 .section_wrapper .credits_wrapper {
   display: flex;
@@ -889,4 +894,186 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+
+
+
+.burger {
+  width: 50px;
+  height: 47px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+.burger .line {
+  width: 100%;
+  height: 3px;
+
+  background-color: #E7D7A1;
+}
+.mobile_menu {
+  display: none;
+}
+
+.mob_popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100svh;
+  gap: 1rem;
+}
+
+.mob_popup a {
+  color: #CBAE67;
+  font-size: 2rem;
+  font-family: 'cinzel';
+}
+.mob_popup .x {
+  position: absolute;
+  top: -0.5rem;
+  right: 2rem;
+  color: white;
+  font-family: 'cinzel';
+  font-size: 6rem;
+  rotate: 45deg;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .mobile_menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+  }
+  .mobile_menu p {
+    font-family: 'coro';
+    font-size: 1.5rem;
+    color: #E7D7A1;
+    line-height: 100%;
+  }
+  
+  menu {
+    display: none;
+  }
+
+  .credits_wrapper img,
+  .story_wrapper img.sep
+  {
+    width: 100%;
+  }
+
+  .story_wrapper h1 {
+    font-size: 3rem;
+  }
+
+  .video {
+    width: 100%;
+    height: unset;
+    aspect-ratio: 3/2;
+  }
+
+  .section_wrapper p {
+    font-size: 1.3rem;
+  }
+
+  .about_us {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .about_us .about_text {
+    width: 100%;
+  }
+  .about_us .about_img {
+    width: 100%;
+    height: 750px;
+    margin: 0;
+    padding: 0;
+
+  }
+    
+  .section_wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 5%;
+  }
+  .section_wrapper h1 {
+    font-size: 3rem;
+  }
+
+  menu a {
+    color: #CBAE67;
+    font-size: 1.25rem;
+    font-family: 'cinzel';
+  }
+
+  .hero_content h1 {
+    font-size: 4rem;
+    line-height: 100%;
+  }
+  
+  .hero_content p {
+    font-size: 1.5rem;
+    margin: 0 0 3rem 0;
+    text-align: center;
+  }
+  
+  
+
+  .section_wrapper.credits {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+  }
+
+
+
+
+
+  table {
+    border-collapse: collapse;
+    background: rgb(255, 255, 255, 0.1);
+    overflow: hidden;
+  }
+
+  thead {
+    background-color: #CBAE67;
+    color: black;
+    font-size: 0.7rem;
+  }
+
+  th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 1rem;
+    font-family: 'coro bold';
+    text-transform: uppercase;
+  }
+
+td {
+  padding: 12px 16px;
+  text-align: left;
+  font-family: 'eb';
+  font-size: .7rem;
+}
 }
