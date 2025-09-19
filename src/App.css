@@ -106,7 +106,7 @@ div.sep {
 }
 .socials img {
   height: 50px;
-
+  width: unset !important;
   display: flex;
   align-items: center;
   justify-content: center;

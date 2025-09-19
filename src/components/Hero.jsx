@@ -32,7 +32,7 @@ export default function Hero () {
           {/* <img src={tiktok} alt="" />
           <img src={instagram} alt="" />
           <img src={youtube} alt="" /> */}
-          <a href="https://flurbonstein.itch.io/anastasis" target='_blank'>
+          <a href="https://flurbonstein.itch.io/anastasis" className='itcha' target='_blank'>
             <img src="/available-on-itch.svg" alt="" />
           </a>
         </div>
