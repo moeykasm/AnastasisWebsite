@@ -47,9 +47,18 @@ function App() {
                 </>
               }
             />
-            <Route path="/report" element={<Support />} />
-            <Route path="/element-lab" element={<Minigame />} />
-            <Route path="/report-a-bug" element={<ReportABug />} />
+            
+            <Route path="/report-a-bug" element={
+              <>
+                  <img src="./shinybg.png" className='shinybg' alt="" />
+                  <ReportABug />
+              </>} />
+
+            <Route path="/element-lab" element={
+            <>
+              <img src="./shinybg.png" className='shinybg' alt="" />
+              <Minigame />
+            </>} />
           </>
         )}
       </Routes>
