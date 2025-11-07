@@ -27,3 +27,4 @@ user.txt
 stuff to do.txt
 # Local Netlify folder
 .netlify
+.env
