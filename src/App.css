@@ -168,6 +168,11 @@ div.sep {
   color: #E7D7A1;
 }
 
+.hero_content button:hover {
+  background-color: rgb(203, 174, 103, 0.2);
+
+}
+
 .hero_content button::after {
 
   content: '';
@@ -941,10 +946,17 @@ a:hover {
 }
 
 .mob_popup a {
-  color: #CBAE67;
+  color: #E7D7A1;
   font-size: 2rem;
   font-family: 'cinzel';
+
+  text-decoration: none;
 }
+
+.mob_popup a:nth-child(9) {
+  display: none;
+}
+
 .mob_popup .x {
   position: absolute;
   top: -0.5rem;

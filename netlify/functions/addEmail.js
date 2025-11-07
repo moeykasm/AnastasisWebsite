@@ -1,51 +1,44 @@
 const admin = require("firebase-admin");
 require("dotenv").config();
 
-
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert({
       projectId: process.env.FIREBASE_PROJECT_ID,
       clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-      privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+      privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
     }),
   });
 }
 
 const db = admin.firestore();
 
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
 
   try {
-    const body = JSON.parse(event.body);
+    const { email } = JSON.parse(event.body);
+    if (!email) {
+      return { statusCode: 400, body: JSON.stringify({ error: "Missing email" }) };
+    }
 
-    const {  } = body;
+    const mailingListRef = db.collection("adminPanel").doc("mailing_list");
 
+    await mailingListRef.update({
+      emails: admin.firestore.FieldValue.arrayUnion(email),
+    });
 
-    const docRef = db.collection("users").doc(username);
-    const docSnap = await docRef.get();
-    
-    if (docSnap.exists) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: false }),
-        };
-    } 
-
-   
     return {
       statusCode: 200,
-      body: JSON.stringify({ success: true, id: ref.id || id }),
+      body: JSON.stringify({ success: true }),
     };
-
-} catch (err) {
-    console.error("addUser error:", err);
+  } catch (err) {
+    console.error("addEmail error:", err);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: err.message, stack: err.stack }),
+      body: JSON.stringify({ error: err.message }),
     };
   }
 };

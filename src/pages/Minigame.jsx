@@ -93,21 +93,17 @@ const elements = [
   },
 ]
 
-
 const positions = [
   { top: '-10%', left: '10%' },
   { top: '5%', left: '30%' },
   { top: '47.5%', right: '45.5%' },
   { top: '30%', left: '5%' },
 
-
   { top: '20%', left: '17.5%' },
   { top: '20%', right: '17.5%' },
-
   
   { top: '40%', left: '30%' },
   { top: '40%', right: '30%' },
-
 
   { top: '30%', right: '5%' },
   { top: '12.5%', right: '45.5%' },

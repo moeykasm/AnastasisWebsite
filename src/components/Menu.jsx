@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Menu () {
 
@@ -41,7 +42,14 @@ export default function Menu () {
 
 
         <div className="mobile_menu">
+          <Link to={'/'}
+          style={{
+            textDecoration: 'none'
+          }}
+          >
           <p>ANASTASIS</p>
+          </Link>
+
           <div onClick={() => setMobMenu(true)} className="burger">
             <div className="line"></div>
             <div className="line"></div>

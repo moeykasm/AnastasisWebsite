@@ -78,7 +78,7 @@ export default function ReportABug() {
       <div className="report_a_bug_wrapper">
 
         <h1>REPORT A BUG</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Fill out the form and we will be in touch!</p>
 
         <div className="form">
           <input onChange={inputChanged} id='discord' type="text" placeholder='Discord Username'/>

@@ -86,3 +86,26 @@
     align-items: center;
     justify-content: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 900px) {
+    .report_a_bug_wrapper h1 {
+        text-align: center;
+        font-size: 3rem;
+        font-family: 'coro';
+        color: #E7D7A1;
+        line-height: 100%;
+    }
+}
+
