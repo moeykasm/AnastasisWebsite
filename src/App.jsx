@@ -34,6 +34,7 @@ function App() {
               path="/"
               element={
                 <>
+                  <img src="./shinybg.png" className='shinybg' alt="" />
                   <Menu />
                   <Hero />
                   <Story />
