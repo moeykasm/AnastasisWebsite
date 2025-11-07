@@ -3,83 +3,96 @@ import { useState, useMemo } from 'react'
 import './css/minigame.css'
 import Menu from '../components/Menu'
 
+import AUV from '../assets/Elements/AUV.png'
+import CMB from '../assets/Elements/CMB.png'
+import CPR from '../assets/Elements/CPR.png'
+import FER from '../assets/Elements/FER.png'
+import HYG from '../assets/Elements/HYG.png'
+import IGN from '../assets/Elements/IGN.png'
+import IRD from '../assets/Elements/IRD.png'
+import LBD from '../assets/Elements/LBD.png'
+import NTR from '../assets/Elements/NTR.png'
+import OXN from '../assets/Elements/OXN.png'
+import QRZ from '../assets/Elements/QRZ.png'
+import SIL from '../assets/Elements/SIL.png'
+
 const elements = [
   {
     id: 1,
-    name: 'Fire',
-    description: 'A blazing force of destruction.',
-    img: '/s1.png',
+    name: 'AUV',
+    // description: 'A blazing force of destruction.',
+    img: AUV,
 
   },
   {
     id: 2,
-    name: 'Fire',
-
-    description: 'Flows with calm or fury.',
-    img: '/s2.png',
+    name: 'CMB',
+    // description: 'Flows with calm or fury.',
+    img: CMB,
   },
   {
     id: 3,
-    name: 'Fire',
-    description: 'Steady and unmoving.',
-    img: '/s3.png',
+    name: 'CPR',
+    // description: 'Steady and unmoving.',
+    img: CPR,
 
   },
   {
     id: 4,
-    name: 'Fire',
-    description: 'Light, quick, and everywhere.',
-    img: '/s4.png',
+    name: 'FER',
+    // description: 'Light, quick, and everywhere.',
+    img: FER,
   },
   {
     id: 5,
-    name: 'Fire',
-    description: 'Light, quick, and everywhere.',
-    img: '/s5.png',
+    name: 'HYG',
+    // description: 'Light, quick, and everywhere.',
+    img: HYG,
   },
   {
     id: 6,
-    name: 'Fire',
-    description: 'Light, quick, and everywhere.',
-    img: '/s6.png',
+    name: 'IGN',
+    // description: 'Light, quick, and everywhere.',
+    img: IGN,
   },
   {
     id: 7,
-    name: 'Fire',
-    description: 'Light, quick, and everywhere.',
-    img: '/s7.png',
+    name: 'IRD',
+    // description: 'Light, quick, and everywhere.',
+    img: IRD,
   },
   {
     id: 8,
-    name: 'Fire',
-    description: 'Light, quick, and everywhere.',
-    img: '/s8.png',
+    name: 'LBD',
+    // description: 'Light, quick, and everywhere.',
+    img: LBD,
   },
   {
     id: 9,
-    name: 'Fire',
-    description: 'Light, quick, and everywhere.',
-    img: '/s9.png',
+    name: 'NTR',
+    // description: 'Light, quick, and everywhere.',
+    img: NTR,
   },
   {
     id: 10,
-    name: 'Fire',
-    description: 'Light, quick, and everywhere.',
-    img: '/s10.png',
+    name: 'OXN',
+    // description: 'Light, quick, and everywhere.',
+    img: OXN,
   },
   {
     id: 11,
-    name: 'Fire',
-    description: 'Light, quick, and everywhere.',
-    img: '/s11.png',
+    name: 'QRZ',
+    // description: 'Light, quick, and everywhere.',
+    img: QRZ,
   },
   {
     id: 12,
-    name: 'Fire',
-    description: 'Light, quick, and everywhere.',
-    img: '/s12.png',
+    name: 'SIL',
+    // description: 'Light, quick, and everywhere.',
+    img: SIL,
   },
 ]
+
 
 const positions = [
   { top: '-10%', left: '10%' },
@@ -102,9 +115,8 @@ const positions = [
   { top: '-10%', right: '10%' },
 ]
 
-
-
 function ElementLab() {
+
   const [selected, setSelected] = useState(null)
 
   const elementStyles = useMemo(() => {
@@ -113,7 +125,6 @@ function ElementLab() {
       animationDuration: `${4 + Math.random() * 4}s`
     }))
   }, [])
-
 
   const closePopup = () => {
     setSelected()
@@ -144,7 +155,7 @@ function ElementLab() {
           <p className='exit' onClick={closePopup}>+</p>
           <img src={selected.img} alt="" />
           <h2>{selected.name}</h2>
-          <p>{selected.description}</p>
+          <p>{selected?.description}</p>
         </div>
       )}
     </div>

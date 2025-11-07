@@ -34,6 +34,25 @@ export default function Newsletter() {
     getContent('newsletter', setWebData)
   }, [])
 
+
+  async function addEmail(email) {
+    try {
+      const res = await fetch("/.netlify/functions/addEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(email),
+      });
+  
+      const data = await res.json();
+      console.log(data)
+    } catch (err) {
+      console.error("Error adding user:", err);
+    }
+  }
+
+  
   return (
     <>
     <div className="section_wrapper" id='trailer'>
@@ -44,6 +63,7 @@ export default function Newsletter() {
         <div className="submission">
           <input value={storedEmail} onChange={emailInputChanged} className="newsletter" type="text" placeholder='youremail@email.com' />
           <div className="submit" onClick={addEmailToMailingList}>
+          <button className="submit" onClick={addEmail}> </button>
           <p>^</p></div>
         </div>
         <br />

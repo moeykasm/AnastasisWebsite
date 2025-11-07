@@ -25,3 +25,5 @@ dist-ssr
 *.sw?
 user.txt
 stuff to do.txt
+# Local Netlify folder
+.netlify
