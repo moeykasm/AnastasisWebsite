@@ -9,6 +9,8 @@ export default function Newsletter() {
 
   const[ storedEmail, setStoredEmail] = useState()
 
+
+  // old function
   async function addEmailToMailingList() {
 
     if(storedEmail) {

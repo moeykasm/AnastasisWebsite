@@ -47,4 +47,22 @@ a {
   bottom: 0;
   right: 0;
   opacity: 0.2;
+  user-select: none;
+  pointer-events: none;
+}
+
+
+.music {
+  width: 60px;
+  height: 60px;
+  background-color: #E7D7A1;
+  bottom: 1rem;
+  left: 1rem;
+
+  position: fixed;
+  border-radius: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

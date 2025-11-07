@@ -16,6 +16,7 @@ import Support from './pages/Support'
 import Minigame from './pages/Minigame'
 import ReportABug from './pages/ReportABug'
 import Credits from './components/Credits'
+import Music from './components/Music'
 
 function App() {
   const [update, setUpdate] = useState(true)
@@ -43,6 +44,7 @@ function App() {
                   <Newsletter />
                   <Credits />
                   <Footer />
+                  <Music />
                   {update && <NewUpdate />}
                 </>
               }
@@ -52,13 +54,16 @@ function App() {
               <>
                   <img src="./shinybg.png" className='shinybg' alt="" />
                   <ReportABug />
+                  <Music />
               </>} />
 
             <Route path="/element-lab" element={
             <>
               <img src="./shinybg.png" className='shinybg' alt="" />
               <Minigame />
+              <Music />
             </>} />
+            
           </>
         )}
       </Routes>
