@@ -62,7 +62,7 @@ export default function Newsletter() {
         <div className="submission">
           <input value={storedEmail} onChange={emailInputChanged} className="newsletter" type="text" placeholder='youremail@email.com' />
           {/* <div className="submit" onClick={addEmailToMailingList}> */}
-          <button className="submit" onClick={addEmail}> </button>
+          <button className="submit" onClick={addEmail}>join</button>
           {/* </div> */}
         </div>
         <br />

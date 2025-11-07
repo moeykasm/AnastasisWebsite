@@ -538,7 +538,6 @@ textarea:focus {
   height: 70px;
 }
 .submit {
-  aspect-ratio: 1/1;
   background-color: #CBAE67;
   height: 100%;
 
@@ -548,18 +547,23 @@ textarea:focus {
   font-family: 'coro bold';
   font-family: 'semi coro';
   font-family: 'eb';
-}
-.submit p {
-  rotate: 90deg;
-  font-size: 4rem;
-  color: black;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translate(0px, 5px);
-  line-height: 100%;
+  color: black;
+  border: 0;
 }
+
+button.submit {
+  font-family: 'coro bold';
+  color: black;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+}
+
+button.submit:hover {
+  opacity: 0.8;
+}
+
 
 input.newsletter {
 
